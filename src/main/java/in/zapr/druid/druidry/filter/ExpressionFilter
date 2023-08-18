@@ -1,0 +1,21 @@
+package in.zapr.druid.druidry.filter;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NonNull;
+
+@Getter
+@EqualsAndHashCode(callSuper = true)
+public class ExpressionFilter extends DruidFilter {
+
+    private static final String EXPRESSIONTYPE = "expression";
+
+    @NonNull
+    private String expression;
+
+    public ExpressionFilter(@NonNull String expression) {
+        this.type = EXPRESSIONTYPE;
+        this.expression = expression;
+    }
+
+}
